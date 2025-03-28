@@ -16,3 +16,22 @@ export const insertProductValidate=z.object({
     isFeatured:z.boolean(),
     banner : z.string().nullable()
 })
+
+// Schema for User Model
+
+export const userDetailsValidate=z.object({
+    email : z.string().email('Invalid Email Address'),
+    password : z.string().min(6,"Password must be greater than 6 characters")
+});
+
+// Scheme for Sign up User
+
+export const signUpValidate=z.object({
+    name:z.string().min(3,'Name must be atleast 3 characters'),
+    email:z.string().email('Enter a valid Email'),
+    password:z.string().min(5,'Password must be atleast 5 Characters'),
+    confirmPassword:z.string().min(5,'Confirm Password must be atleast 5 Characters'),
+}).refine((data)=> data.password===data.confirmPassword,{
+    message:"Password doesn't match",
+    path:['confirmPassword']
+});

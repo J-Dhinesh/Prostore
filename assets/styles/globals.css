@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
-
+@layer base-utilites;
 
 
 :root {
@@ -125,6 +125,11 @@
   }
 }
 
+@utility flex-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 /* .wrapper {
   @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;
 }
