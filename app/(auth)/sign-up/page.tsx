@@ -19,7 +19,7 @@ const SignInPage =async (props:{
     const session=await auth();
     if(session)
         return redirect(callbackUrl || '/');
-    return <div className="min-w-md text-center">
+    return <div className="min-w-md text-center mt-10">
         <Card className="px-4">
             <CardHeader className="flex flex-col items-center ">
                 <Image src='/images/logo.svg' alt={`${APP_NAME} logo`} width={100} height={100} className=""/>
